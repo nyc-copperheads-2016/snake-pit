@@ -1,0 +1,11 @@
+<div class='welcome'>
+  Hello Copperheads!
+</div>
+
+<div class='snakes'>
+<% @snakes.each do |snake| %>
+  <div class='snake'>
+    <label>Name</label><%= snake.name %>
+  </div>
+<% end %>
+</div>
