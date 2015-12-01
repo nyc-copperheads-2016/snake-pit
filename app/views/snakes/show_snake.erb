@@ -1,0 +1,7 @@
+<li class='snake'>
+  <%= snake.name %>
+  <form action="/snakes/<%= snake.id %>" method='post'>
+    <input type='hidden' name='_method' value='delete' />
+    <input type='submit' value='DELETE SNAKE' />
+  </form>
+</li>

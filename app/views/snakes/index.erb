@@ -1,13 +1,8 @@
 <h1>All the snakes</h1>
 <div class='snakes'>
   <ul>
-    <% @snakes.each do |snake| %>
-    <li class='snake'>
-      <%= snake.name %>
-    </li>
+    <% all_snakes.each do |snake| %>
+      <%= erb :'snakes/show_snake', locals: { snake: snake } %>
     <% end %>
   </ul>
 </div>
-
-<%# "hello" %> <!-- Does not output -->
-<%#= "hello" %><!-- outputs whatever is inside -->
