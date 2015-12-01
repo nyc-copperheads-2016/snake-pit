@@ -1,11 +1,13 @@
-<div class='welcome'>
-  Hello Copperheads!
+<h1>All the snakes</h1>
+<div class='snakes'>
+  <ul>
+    <% @snakes.each do |snake| %>
+    <li class='snake'>
+      <%= snake.name %>
+    </li>
+    <% end %>
+  </ul>
 </div>
 
-<div class='snakes'>
-<% @snakes.each do |snake| %>
-  <div class='snake'>
-    <label>Name</label><%= snake.name %>
-  </div>
-<% end %>
-</div>
+<%# "hello" %> <!-- Does not output -->
+<%#= "hello" %><!-- outputs whatever is inside -->
