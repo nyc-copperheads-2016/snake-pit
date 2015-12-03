@@ -38,7 +38,19 @@
     </div>
     <div class='top-bar-right'>
       <ul class='menu'>
-        <li><a href="#">Login</a></li>
+        <li>You've been here <%= visit_counter %> times</li>
+        <li>
+        <% if logged_in? %>
+          <span class='welcome'>Welcome <%= current_user.username %></span>
+          <form method='post' action='/sessions'>
+            <input type='hidden' name='_method' value='DELETE' />
+            <input type='submit' value='Logout' />
+          </form>
+        <% else %>
+          <a href='/users/new'>New User</a>
+          <a href="/sessions/new">Login</a>
+        <% end %>
+        </li>
       </ul>
     </div>
   </div>
@@ -49,6 +61,16 @@
       <h2 class="subheader">A fantastic blog about Copperheads</h2>
     </div>
   </div>
+
+  <% if defined?(errors) %>
+  <div class='errors'>
+  <ul>
+    <% errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+  </div>
+  <% end %>
 
   <div class='content'>
     <div class='row'>

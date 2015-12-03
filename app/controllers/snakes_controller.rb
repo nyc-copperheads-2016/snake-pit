@@ -1,5 +1,6 @@
 get '/' do
   snakes = Snake.all
+  update_visited_counter!
   erb :'snakes/index', locals: { all_snakes: snakes }
 end
 
