@@ -66,4 +66,13 @@ code {
     overflow: auto;
 }
 
-.panel
+#logout {
+     background:none!important;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     cursor: pointer;
+     color: gray;
+     display: inline;
+}

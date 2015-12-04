@@ -18,7 +18,7 @@ post '/snakes' do
   if snake.save
     redirect '/'
   else
-    erb :'snakes/form'
+    erb :'snakes/form', locals: { errors: snake.errors.full_messages }
   end
 end
 
