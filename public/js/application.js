@@ -1,7 +1,22 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+// Primitive types:
+var string = "Chris";
+var numeric = 1.2
+var bool = true
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+var x; null
+//console.log(y); //== undefined
+
+
+// Data structures:
+// Array
+
+var ar = []
+ar.push(value)
+
+// Object
+
+var obj = {
+          key: 'value',
+          name: 'Chris',
+          age: 36
+        }

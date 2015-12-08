@@ -1,5 +1,5 @@
 <li class='snake'>
-  <%= snake.name %>
+  <%= snake.name %> <em>(<%= snake.species %>)</em>
   <form action="/snakes/<%= snake.id %>" method='post'>
     <input type='hidden' name='_method' value='delete' />
     <input type='submit' value='DELETE SNAKE' />

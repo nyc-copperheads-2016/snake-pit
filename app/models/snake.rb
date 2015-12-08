@@ -6,7 +6,7 @@ class Snake < ActiveRecord::Base
   validate :name_is_a_word
 
   def name_is_a_word
-    unless self.name =~ /^[[:alnum]- ]+$/
+    unless self.name =~ /^[[:alnum:]\- ]+$/
       errors.add(:name, "Must be word characters.")
     end
   end
