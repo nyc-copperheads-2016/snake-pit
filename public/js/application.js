@@ -1,22 +1,33 @@
-// Primitive types:
-var string = "Chris";
-var numeric = 1.2
-var bool = true
+$(document).ready(function(){
+  $('#delete-snakes').on('click', function(event){
+    event.preventDefault(); 
+    $('body').append("<h1>HIISSSSSSSSSSSSSSSSSSSSS</h1>");
+  });
+});
 
-var x; null
-//console.log(y); //== undefined
 
 
-// Data structures:
-// Array
 
-var ar = []
-ar.push(value)
 
-// Object
+// // Primitive types:
+// var string = "Chris";
+// var numeric = 1.2
+// var bool = true
 
-var obj = {
-          key: 'value',
-          name: 'Chris',
-          age: 36
-        }
+// var x; null
+// //console.log(y); //== undefined
+
+
+// // Data structures:
+// // Array
+
+// var ar = []
+// ar.push(value)
+
+// // Object
+
+// var obj = {
+//           key: 'value',
+//           name: 'Chris',
+//           age: 36
+//         }

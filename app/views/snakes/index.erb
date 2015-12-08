@@ -1,8 +1,11 @@
 <h1>All the snakes</h1>
 <div class='snakes'>
-  <ul>
+  <ul id='my-list'>
     <% all_snakes.each do |snake| %>
       <%= erb :'snakes/show_snake', locals: { snake: snake } %>
     <% end %>
   </ul>
+  <div>
+    <a id='delete-snakes' href='www.starwars.com'>DELETE ALL THE SNAKES</a>
+  </div>
 </div>
