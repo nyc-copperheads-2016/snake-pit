@@ -1,3 +1,4 @@
+require 'pry'
 get '/' do
   snakes = Snake.all
   update_visited_counter!
@@ -5,7 +6,13 @@ get '/' do
 end
 
 get '/snakes/new' do
-  erb :'snakes/form'
+  if request.xhr?
+    erb :'snakes/form', layout: false
+  else
+    erb :'snakes/form'
+  end
+  # once the above makes sense to you, you can shortcut it like this (This is equivalent)
+  # erb :'snakes/form', layout: !request.xhr?
 end
 
 get '/snakes/:id' do

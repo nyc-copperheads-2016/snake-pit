@@ -29,7 +29,7 @@
     <div class="top-bar-left">
       <ul class="menu">
         <li class="menu-text"><a href='/'>Snakes</a></li>
-        <li><a href="/snakes/new">Make a snake</a></li>
+        <li><a id='make_snake_link' href="/snakes/new">Make a snake</a></li>
       </ul>
     </div>
     <div class='top-bar-right'>
@@ -70,7 +70,7 @@
 
   <div class='content'>
     <div class='row'>
-      <div class='large-offset-1 large-10 columns'>
+      <div class='large-offset-1 large-10 columns' id='main_content'>
         <%= yield %>
       </div>
     </div>
