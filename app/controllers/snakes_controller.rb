@@ -1,4 +1,3 @@
-require 'pry'
 get '/' do
   snakes = Snake.all
   update_visited_counter!
@@ -23,7 +22,12 @@ end
 post '/snakes' do
   snake = Snake.new(name: params[:name], species: params[:species])
   if snake.save
-    redirect '/'
+    if request.xhr?
+      snakes = Snake.all
+      erb :'snakes/index', layout: false, locals: { all_snakes: snakes }
+    else
+      redirect '/'
+    end
   else
     erb :'snakes/form', locals: { errors: snake.errors.full_messages }
   end

@@ -16,6 +16,19 @@ $(document).ready(function(){
     event.preventDefault();
     $('body').append("<h1>HIISSSSSSSSSSSSSSSSSSSSS</h1>");
   });
+
+  $('#main_content').on('submit', '#new-snake-form', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: event.target.action,
+      method: 'post',
+      data: $(event.target).serialize()
+    }).done(function(result) {
+      $('#main_content').html(result);
+    }).fail(function(error) {
+      console.log("Error: " + error);
+    })
+  })
 });
 
 
