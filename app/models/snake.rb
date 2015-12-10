@@ -1,4 +1,6 @@
 class Snake < ActiveRecord::Base
+  has_many :skins
+
   validates :name, presence: true
   validates :name, length: { minimum: 6 }
   before_save :capitalize_name

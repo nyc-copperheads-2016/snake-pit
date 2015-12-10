@@ -1,7 +1,11 @@
 get '/' do
   snakes = Snake.all
   update_visited_counter!
-  erb :'snakes/index', locals: { all_snakes: snakes }
+  erb :'snakes/index', locals: { all_snakes: snakes }, layout: !request.xhr?
+end
+
+get '/snakes' do
+  redirect '/'
 end
 
 get '/snakes/new' do

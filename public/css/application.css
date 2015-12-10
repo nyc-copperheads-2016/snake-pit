@@ -76,3 +76,11 @@ code {
      color: gray;
      display: inline;
 }
+
+.snakeskin {
+    display: inline;
+}
+
+li.snake form {
+    display: inline;
+}
