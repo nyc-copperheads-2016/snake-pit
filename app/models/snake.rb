@@ -1,6 +1,9 @@
 class Snake < ActiveRecord::Base
   has_many :skins
 
+  belongs_to :owner, class_name: User
+  belongs_to :keeper, class_name: User
+
   validates :name, presence: true
   validates :name, length: { minimum: 6 }
   before_save :capitalize_name

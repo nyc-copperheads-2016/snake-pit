@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   attr_accessor :password_confirmation
 
+  has_many :owned_snakes, class_name: Snake, foreign_key: 'owner_id'
+  has_many :kept_snakes, class_name: Snake, foreign_key: 'keeper_id'
+
   validates :password_confirmation, length: { minimum: 8 }
   validates_confirmation_of :password, :confirm => :password_confirmation
 

@@ -43,9 +43,9 @@ $(document).ready(function(){
     event.preventDefault();
 
     var growsnake = $.ajax({
-      url: event.target.action,
-      method: event.target.method,
-      data: $(event.target).serialize(),
+      url: this.action,
+      method: this.method,
+      data: $(this).serialize(),
       dataType: 'json'
     });
 
