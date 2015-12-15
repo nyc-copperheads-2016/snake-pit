@@ -72,3 +72,14 @@ function load_index() {
     $('#main_content').html(result);
   });
 }
+
+// Various things below:
+//
+// Using reduce:
+
+// Find the spans and make an array of their html values
+skins = $('span.snakeskin').map(function(curr, index, ar) { return $(index).html() })
+// Make it into a real array instead of a jquery thingy
+skins = Array.prototype.slice.call(skins)
+// Reduce it to find the total count of skins
+skins.reduce(function(accumulator, current) { return accumulator + parseInt(current) }, 0)
