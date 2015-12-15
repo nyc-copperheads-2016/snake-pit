@@ -1,3 +1,12 @@
+get '/snakes/:id/skins' do
+  snake = Snake.find(params[:id])
+  if request.xhr?
+    snake.to_json include: :skins, methods: :color
+  else
+    # Show snakeskin
+  end
+end
+
 post '/snakes/:id/skins' do
   snake = Snake.find(params[:id])
 

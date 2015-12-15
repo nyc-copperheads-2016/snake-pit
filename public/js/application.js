@@ -41,13 +41,25 @@ $(document).ready(function(){
 
   $('.growsnake').on('submit', function(event) {
     event.preventDefault();
-    $.ajax({
+
+    var growsnake = $.ajax({
       url: event.target.action,
       method: event.target.method,
+      data: $(event.target).serialize(),
       dataType: 'json'
-    }).done(function(response) {
-      $(event.target).parent().find('span').html(response.count);
-    }).fail(function(error) {
+    });
+
+    var snakecolor = $.ajax({
+      url: event.target.action,
+      method: 'get',
+      dataType: 'json'
+    });
+
+    $.when(growsnake, snakecolor).done(function(growsnake_response, snakecolor_response) {
+      $(event.target).parent().find('span.snakeskin').html(growsnake_response[0].skins.length);
+      $(event.target).parent().find('span.color').html(snakecolor_response[0].color);
+      $(event.target).parent().css('color', snakecolor_response[0].color);
+    }).fail(function(growsnake_error, colorsnake_error) {
       console.log('Could not shed skin');
     });
   })

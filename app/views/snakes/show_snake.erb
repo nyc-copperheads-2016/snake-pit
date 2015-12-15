@@ -1,5 +1,5 @@
 <li class='snake'>
-  <%= snake.name %> <em>(<%= snake.species %>)</em> Has shed its skin <span class='snakeskin'><%= snake.skins.length %></span> times.
+  <%= snake.name %> <em>(<%= snake.species %>)</em> Is a <span class='color'><%= snake.color %></span> snake that has shed its skin <span class='snakeskin'><%= snake.skins.length %></span> times.
   <form action="/snakes/<%= snake.id %>" method='post'>
     <input type='hidden' name='_method' value='delete' />
     <input type='submit' value='Delete' />

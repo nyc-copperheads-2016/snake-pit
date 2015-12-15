@@ -22,4 +22,8 @@ class Snake < ActiveRecord::Base
       errors.add(:name, "Must be capitalized")
     end
   end
+
+  def color
+    %w{Red Green Blue Yellow Orange Puce Lavender Coral}.sample
+  end
 end
